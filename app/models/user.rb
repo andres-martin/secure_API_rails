@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   after_initialize :generate_token
+  has_secure_token :api_token
 
   private
     def generate_token
